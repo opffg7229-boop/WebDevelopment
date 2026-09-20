@@ -2,29 +2,18 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Md Mehedi Islam - Web Developer Portfolio">
-
-    <meta name="keywords"
-          content="Md Mehedi Islam, Web Developer, HTML, CSS, JavaScript, Portfolio">
+        content="Md Mehedi Islam - Web Developer Portfolio">
 
     <meta name="author"
-          content="Md Mehedi Islam">
+        content="Md Mehedi Islam">
 
     <title>Md Mehedi Islam | Web Developer</title>
 
-
     <style>
-
-        /* =========================
-           RESET
-        ========================= */
 
         * {
             margin: 0;
@@ -32,11 +21,6 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
-
-
-        /* =========================
-           BODY
-        ========================= */
 
         body {
             font-family: Arial, sans-serif;
@@ -46,120 +30,59 @@
             transition: 0.4s;
         }
 
-
-        /* =========================
-           NAVBAR
-        ========================= */
+        /* NAVBAR */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-
             background: rgba(15, 23, 42, 0.95);
-
             padding: 18px 20px;
-
             text-align: center;
-
             border-bottom: 1px solid #1e293b;
-
             backdrop-filter: blur(10px);
         }
-
 
         nav a {
             color: white;
             text-decoration: none;
-
-            margin: 0 18px;
-
+            margin: 0 15px;
             font-size: 16px;
             font-weight: bold;
-
             transition: 0.3s;
         }
-
 
         nav a:hover {
             color: #00e5ff;
         }
 
-
-        /* =========================
-           THEME BUTTON
-        ========================= */
-
-        .theme-button {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            padding: 12px 18px;
-
-            border: none;
-            border-radius: 30px;
-
-            background: #00e5ff;
-            color: #07111f;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            z-index: 2000;
-
-            box-shadow: 0 5px 20px rgba(0, 229, 255, 0.3);
-
-            transition: 0.3s;
-        }
-
-
-        .theme-button:hover {
-            transform: scale(1.08);
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
+        /* HERO */
 
         #home {
             min-height: 90vh;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             padding: 80px 20px;
 
             background:
                 radial-gradient(
                     circle at top,
                     #172554,
-                    #0b1120 55%
+                    #0b1120 60%
                 );
         }
-
 
         .hero-container {
             max-width: 850px;
         }
 
-
-        /* PROFILE IMAGE */
-
         .profile-image {
             width: 180px;
             height: 180px;
-
             border-radius: 50%;
-
             object-fit: cover;
-
             border: 5px solid #00e5ff;
 
             box-shadow:
@@ -167,421 +90,324 @@
                 0 0 60px rgba(0, 229, 255, 0.25);
 
             margin-bottom: 25px;
-
             transition: 0.4s;
         }
 
-
         .profile-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
-
-
-        /* HERO TITLE */
 
         .hero-container h1 {
             font-size: 55px;
-
             color: #00e5ff;
-
             margin-bottom: 10px;
         }
 
-
         .hero-container h2 {
             font-size: 28px;
-
-            color: white;
-
             margin-bottom: 15px;
         }
 
+        .typing {
+            color: #00e5ff;
+        }
 
         .hero-container p {
             color: #cbd5e1;
-
-            font-size: 19px;
-
+            font-size: 18px;
             max-width: 650px;
-
             margin: auto;
         }
 
-
-        /* =========================
-           BUTTONS
-        ========================= */
+        /* BUTTONS */
 
         .buttons {
             margin-top: 30px;
         }
 
-
         .button {
             display: inline-block;
-
             padding: 13px 25px;
-
             margin: 7px;
-
             border-radius: 8px;
-
             background: #00e5ff;
-
             color: #07111f;
-
             text-decoration: none;
-
             font-weight: bold;
-
             border: none;
-
             cursor: pointer;
-
             transition: 0.3s;
         }
 
-
         .button:hover {
             transform: translateY(-4px);
-
             background: white;
-
-            box-shadow:
-                0 10px 25px rgba(0, 229, 255, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.25);
         }
 
-
-        .button-outline {
+        .outline {
             background: transparent;
-
             color: #00e5ff;
-
             border: 2px solid #00e5ff;
         }
 
-
-        .button-outline:hover {
+        .outline:hover {
             background: #00e5ff;
-
             color: #07111f;
         }
 
-
-        /* =========================
-           SECTIONS
-        ========================= */
+        /* SECTIONS */
 
         section {
             padding: 100px 20px;
-
             text-align: center;
         }
 
-
         .section-title {
             font-size: 42px;
-
             color: #00e5ff;
-
             margin-bottom: 15px;
         }
 
-
         .section-subtitle {
             color: #94a3b8;
-
             max-width: 700px;
-
             margin: 0 auto 50px;
-
             font-size: 18px;
         }
 
-
-        /* =========================
-           ABOUT
-        ========================= */
+        /* ABOUT */
 
         #about {
             background: #0f172a;
         }
 
-
         .about-box {
             max-width: 850px;
-
             margin: auto;
-
             padding: 35px;
-
             background: #111c33;
-
             border: 1px solid #1e293b;
-
             border-radius: 15px;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.25);
         }
-
 
         .about-box p {
             color: #cbd5e1;
-
             font-size: 18px;
-
             margin-bottom: 20px;
         }
 
-
-        /* =========================
-           SKILLS
-        ========================= */
+        /* SKILLS */
 
         #skills {
             background: #0b1120;
         }
 
-
         .skills-container {
             max-width: 1000px;
-
             margin: auto;
 
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
-
         .skill-card {
             background: #111c33;
-
             border: 1px solid #1e293b;
-
             border-radius: 15px;
-
             padding: 25px;
-
             text-align: left;
-
             transition: 0.3s;
         }
 
-
         .skill-card:hover {
             transform: translateY(-6px);
-
             border-color: #00e5ff;
-
-            box-shadow:
-                0 10px 30px rgba(0, 229, 255, 0.12);
         }
-
 
         .skill-name {
             display: flex;
-
             justify-content: space-between;
-
             margin-bottom: 10px;
-
             font-weight: bold;
         }
-
 
         .skill-name span:last-child {
             color: #00e5ff;
         }
 
-
         .progress {
             width: 100%;
-
             height: 10px;
-
             background: #1e293b;
-
             border-radius: 10px;
-
             overflow: hidden;
         }
 
-
         .progress-bar {
             height: 100%;
-
             background: #00e5ff;
-
             border-radius: 10px;
+            animation: skillLoad 1.5s ease;
         }
-
 
         .html {
             width: 90%;
         }
 
-
         .css {
             width: 80%;
         }
-
 
         .javascript {
             width: 65%;
         }
 
-
         .design {
             width: 75%;
         }
 
+        @keyframes skillLoad {
+            from {
+                width: 0;
+            }
+        }
 
-        /* =========================
-           PROJECTS
-        ========================= */
+        /* PROJECTS */
 
         #projects {
             background: #0f172a;
         }
 
-
         .projects-container {
             max-width: 1000px;
-
             margin: auto;
 
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-
         .project-card {
             background: #111c33;
-
             border: 1px solid #1e293b;
-
             border-radius: 15px;
-
             padding: 30px 20px;
-
             transition: 0.3s;
         }
 
-
         .project-card:hover {
             transform: translateY(-8px);
-
             border-color: #00e5ff;
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.12);
         }
-
 
         .project-icon {
             font-size: 45px;
-
             margin-bottom: 15px;
         }
 
-
         .project-card h3 {
             color: #00e5ff;
-
             margin-bottom: 10px;
         }
 
-
         .project-card p {
             color: #cbd5e1;
-
-            font-size: 15px;
         }
 
-
-        /* =========================
-           CONTACT
-        ========================= */
+        /* CONTACT */
 
         #contact {
             background: #0b1120;
         }
 
-
         .contact-box {
             max-width: 700px;
-
             margin: auto;
-
             padding: 40px;
-
             background: #111c33;
-
             border-radius: 15px;
-
             border: 1px solid #1e293b;
         }
 
-
         .contact-box p {
             color: #cbd5e1;
-
             font-size: 18px;
-
             margin-bottom: 20px;
         }
 
+        /* THEME BUTTON */
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .theme-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 30px;
+            background: #00e5ff;
+            color: #07111f;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        /* TOP BUTTON */
+
+        #topButton {
+            position: fixed;
+            right: 20px;
+            bottom: 75px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: #00e5ff;
+            color: #07111f;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            display: none;
+            z-index: 2000;
+        }
+
+        /* FOOTER */
 
         footer {
             text-align: center;
-
             padding: 30px 20px;
-
             background: #070b14;
-
             color: #94a3b8;
-
             border-top: 1px solid #1e293b;
         }
-
 
         footer strong {
             color: #00e5ff;
         }
 
-
-        /* =========================
-           LIGHT MODE
-        ========================= */
+        /* LIGHT MODE */
 
         body.light-mode {
             background: #f1f5f9;
-
             color: #0f172a;
         }
 
-
         body.light-mode nav {
             background: rgba(255, 255, 255, 0.95);
-
             border-bottom: 1px solid #e2e8f0;
         }
-
 
         body.light-mode nav a {
             color: #0f172a;
         }
-
 
         body.light-mode #home {
             background:
@@ -592,38 +418,31 @@
                 );
         }
 
-
         body.light-mode .hero-container h2 {
             color: #0f172a;
         }
 
-
         body.light-mode .hero-container p {
             color: #475569;
         }
-
 
         body.light-mode #about,
         body.light-mode #projects {
             background: #e2e8f0;
         }
 
-
         body.light-mode #skills,
         body.light-mode #contact {
             background: #f1f5f9;
         }
-
 
         body.light-mode .about-box,
         body.light-mode .skill-card,
         body.light-mode .project-card,
         body.light-mode .contact-box {
             background: white;
-
             border-color: #cbd5e1;
         }
-
 
         body.light-mode .about-box p,
         body.light-mode .project-card p,
@@ -631,22 +450,11 @@
             color: #475569;
         }
 
-
-        body.light-mode .progress {
-            background: #cbd5e1;
-        }
-
-
         body.light-mode footer {
             background: white;
-
-            border-color: #cbd5e1;
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 800px) {
 
@@ -654,13 +462,10 @@
                 grid-template-columns: 1fr;
             }
 
-
             .projects-container {
                 grid-template-columns: 1fr;
             }
-
         }
-
 
         @media (max-width: 600px) {
 
@@ -668,96 +473,56 @@
                 padding: 15px 5px;
             }
 
-
             nav a {
-                margin: 0 7px;
-
-                font-size: 14px;
+                margin: 0 6px;
+                font-size: 13px;
             }
-
-
-            #home {
-                min-height: 85vh;
-
-                padding: 70px 15px;
-            }
-
 
             .profile-image {
                 width: 145px;
-
                 height: 145px;
             }
-
 
             .hero-container h1 {
                 font-size: 38px;
             }
 
-
             .hero-container h2 {
                 font-size: 22px;
             }
-
 
             .hero-container p {
                 font-size: 16px;
             }
 
-
             .section-title {
                 font-size: 34px;
             }
 
-
             section {
                 padding: 75px 15px;
             }
-
-
-            .theme-button {
-                right: 12px;
-
-                bottom: 12px;
-
-                padding: 10px 14px;
-
-                font-size: 12px;
-            }
-
         }
 
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- NAVBAR -->
 
     <nav>
 
         <a href="#home">Home</a>
-
         <a href="#about">About</a>
-
         <a href="#skills">Skills</a>
-
         <a href="#projects">Projects</a>
-
         <a href="#contact">Contact</a>
 
     </nav>
 
 
-
-    <!-- =========================
-         THEME BUTTON
-    ========================== -->
+    <!-- THEME BUTTON -->
 
     <button
         class="theme-button"
@@ -768,15 +533,21 @@
     </button>
 
 
+    <!-- TOP BUTTON -->
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <button
+        id="topButton"
+        onclick="goTop()"
+    >
+        ↑
+    </button>
+
+
+    <!-- HERO -->
 
     <section id="home">
 
         <div class="hero-container">
-
 
             <img
                 class="profile-image"
@@ -784,23 +555,19 @@
                 alt="Md Mehedi Islam Profile Photo"
             >
 
-
             <h1>
                 Md Mehedi Islam
             </h1>
 
-
             <h2>
-                Web Developer
+                I am a <span class="typing" id="typing"></span>
             </h2>
-
 
             <p>
                 I am learning Web Development and building
                 modern, responsive and creative websites
                 using HTML, CSS and JavaScript.
             </p>
-
 
             <div class="buttons">
 
@@ -812,12 +579,11 @@
                     Facebook
                 </a>
 
-
                 <a
-                    class="button button-outline"
-                    href="#contact"
+                    class="button outline"
+                    href="#projects"
                 >
-                    Contact Me
+                    My Projects
                 </a>
 
             </div>
@@ -827,10 +593,7 @@
     </section>
 
 
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
+    <!-- ABOUT -->
 
     <section id="about">
 
@@ -838,30 +601,21 @@
             About Me
         </h2>
 
-
         <p class="section-subtitle">
-            A little information about me and my journey.
+            Learn more about me and my Web Development journey.
         </p>
-
 
         <div class="about-box">
 
             <p id="message">
-
                 Hello! I am Md Mehedi Islam.
                 I am currently learning Web Development.
-
             </p>
-
 
             <p>
-
                 My goal is to become a skilled Web Developer
-                and create useful, modern and user-friendly
-                websites.
-
+                and create modern, useful and user-friendly websites.
             </p>
-
 
             <button
                 class="button"
@@ -875,10 +629,7 @@
     </section>
 
 
-
-    <!-- =========================
-         SKILLS
-    ========================== -->
+    <!-- SKILLS -->
 
     <section id="skills">
 
@@ -886,95 +637,63 @@
             My Skills
         </h2>
 
-
         <p class="section-subtitle">
-
             Technologies and skills I am currently learning.
-
         </p>
-
 
         <div class="skills-container">
 
-
             <div class="skill-card">
 
                 <div class="skill-name">
-
                     <span>HTML</span>
-
                     <span>90%</span>
-
                 </div>
 
-
                 <div class="progress">
-
                     <div class="progress-bar html"></div>
-
                 </div>
 
             </div>
 
 
-
             <div class="skill-card">
 
                 <div class="skill-name">
-
                     <span>CSS</span>
-
                     <span>80%</span>
-
                 </div>
 
-
                 <div class="progress">
-
                     <div class="progress-bar css"></div>
-
                 </div>
 
             </div>
 
 
-
             <div class="skill-card">
 
                 <div class="skill-name">
-
                     <span>JavaScript</span>
-
                     <span>65%</span>
-
                 </div>
 
-
                 <div class="progress">
-
                     <div class="progress-bar javascript"></div>
-
                 </div>
 
             </div>
 
 
-
             <div class="skill-card">
 
                 <div class="skill-name">
-
                     <span>Web Design</span>
-
                     <span>75%</span>
-
                 </div>
 
-
                 <div class="progress">
-
                     <div class="progress-bar design"></div>
-
                 </div>
 
             </div>
@@ -984,10 +703,7 @@
     </section>
 
 
-
-    <!-- =========================
-         PROJECTS
-    ========================== -->
+    <!-- PROJECTS -->
 
     <section id="projects">
 
@@ -995,16 +711,11 @@
             My Projects
         </h2>
 
-
         <p class="section-subtitle">
-
-            Projects I am building while learning Web Development.
-
+            Some projects I am building while learning Web Development.
         </p>
 
-
         <div class="projects-container">
-
 
             <div class="project-card">
 
@@ -1017,14 +728,11 @@
                 </h3>
 
                 <p>
-
-                    A personal portfolio website built using
+                    My personal portfolio website built with
                     HTML, CSS and JavaScript.
-
                 </p>
 
             </div>
-
 
 
             <div class="project-card">
@@ -1038,14 +746,11 @@
                 </h3>
 
                 <p>
-
                     Practicing modern layouts, colors,
                     responsive design and user interfaces.
-
                 </p>
 
             </div>
-
 
 
             <div class="project-card">
@@ -1059,10 +764,8 @@
                 </h3>
 
                 <p>
-
-                    Learning JavaScript to create
-                    interactive and dynamic websites.
-
+                    Learning JavaScript to create interactive
+                    and dynamic websites.
                 </p>
 
             </div>
@@ -1072,10 +775,7 @@
     </section>
 
 
-
-    <!-- =========================
-         CONTACT
-    ========================== -->
+    <!-- CONTACT -->
 
     <section id="contact">
 
@@ -1083,23 +783,15 @@
             Contact Me
         </h2>
 
-
         <p class="section-subtitle">
-
             Feel free to connect with me.
-
         </p>
-
 
         <div class="contact-box">
 
             <p>
-
-                You can contact me through Facebook
-                or send me an email.
-
+                You can contact me through Facebook.
             </p>
-
 
             <a
                 class="button"
@@ -1109,44 +801,92 @@
                 Facebook
             </a>
 
-
-            <a
-                class="button button-outline"
-                href="mailto:example@gmail.com"
-            >
-                Email Me
-            </a>
-
         </div>
 
     </section>
 
 
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <!-- FOOTER -->
 
     <footer>
 
         <p>
-
             © 2026
             <strong>Md Mehedi Islam</strong>.
-
             All Rights Reserved.
-
         </p>
 
     </footer>
 
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+    <!-- JAVASCRIPT -->
 
     <script>
+
+        /* TYPING ANIMATION */
+
+        const words = [
+            "Web Developer",
+            "Frontend Developer",
+            "Web Designer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+
+            const typing =
+                document.getElementById("typing");
+
+            const currentWord =
+                words[wordIndex];
+
+            if (!deleting) {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+
+                    deleting = true;
+
+                    setTimeout(typeEffect, 1200);
+
+                    return;
+                }
+
+            } else {
+
+                typing.textContent =
+                    currentWord.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex++;
+
+                    if (wordIndex === words.length) {
+                        wordIndex = 0;
+                    }
+
+                }
+
+            }
+
+            setTimeout(
+                typeEffect,
+                deleting ? 60 : 100
+            );
+        }
+
+        typeEffect();
 
 
         /* CHANGE MESSAGE */
@@ -1159,17 +899,14 @@
         }
 
 
-
         /* DARK / LIGHT MODE */
 
         function toggleTheme() {
 
             document.body.classList.toggle("light-mode");
 
-
-            let button =
+            const button =
                 document.getElementById("themeButton");
-
 
             if (
                 document.body.classList.contains("light-mode")
@@ -1178,19 +915,46 @@
                 button.innerHTML =
                     "🌙 Dark Mode";
 
-            }
-
-            else {
+            } else {
 
                 button.innerHTML =
                     "☀️ Light Mode";
 
             }
+        }
+
+
+        /* BACK TO TOP */
+
+        window.onscroll = function () {
+
+            const topButton =
+                document.getElementById("topButton");
+
+            if (
+                document.documentElement.scrollTop > 300
+            ) {
+
+                topButton.style.display = "block";
+
+            } else {
+
+                topButton.style.display = "none";
+
+            }
+        };
+
+
+        function goTop() {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
         }
 
     </script>
-
 
 </body>
 
