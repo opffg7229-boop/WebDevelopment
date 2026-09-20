@@ -1,435 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Md Mehedi Islam - Web Developer Portfolio">
-    <meta name="author" content="Md Mehedi Islam">
-
-    <title>Md Mehedi Islam | Web Developer</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0b0f;
-            color: white;
-            line-height: 1.6;
-            transition: 0.3s;
-        }
-
-        /* NAVBAR */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 18px 8%;
-
-            background: rgba(11,11,15,0.95);
-            backdrop-filter: blur(10px);
-
-            border-bottom: 1px solid #222;
-        }
-
-        .logo {
-            color: #00e5ff;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #00e5ff;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 90vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            padding: 60px 20px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            border: 4px solid #00e5ff;
-
-            margin-bottom: 25px;
-
-            box-shadow: 0 0 30px rgba(0,229,255,0.3);
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        .hero h1 span {
-            color: #00e5ff;
-        }
-
-        .typing {
-            font-size: 24px;
-            color: #aaa;
-            margin-bottom: 25px;
-        }
-
-        .button {
-            display: inline-block;
-
-            padding: 12px 22px;
-            margin: 6px;
-
-            border-radius: 8px;
-
-            background: #00e5ff;
-            color: #000;
-
-            text-decoration: none;
-            font-weight: bold;
-
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0,229,255,0.4);
-        }
-
-        .secondary {
-            background: transparent;
-            color: #00e5ff;
-            border: 1px solid #00e5ff;
-        }
-
-        /* SECTIONS */
-
-        section {
-            padding: 80px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #00e5ff;
-        }
-
-        /* ABOUT */
-
-        .about {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            color: #ccc;
-            font-size: 18px;
-        }
-
-        /* SKILLS */
-
-        .skills-container {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .skill {
-            margin-bottom: 25px;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-
-        .skill-bar {
-            height: 12px;
-            background: #222;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: #00e5ff;
-            border-radius: 20px;
-            animation: skillAnimation 2s ease;
-        }
-
-        @keyframes skillAnimation {
-            from {
-                width: 0;
-            }
-        }
-
-        /* PROJECTS */
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .project-card {
-            background: #15151c;
-            border: 1px solid #292933;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #00e5ff;
-            box-shadow: 0 10px 30px rgba(0,229,255,0.15);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .project-content {
-            padding: 22px;
-        }
-
-        .project-content h3 {
-            color: #00e5ff;
-            margin-bottom: 10px;
-        }
-
-        .project-content p {
-            color: #aaa;
-            margin-bottom: 15px;
-        }
-
-        /* CONTACT */
-
-        .contact-container {
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-
-            padding: 14px;
-
-            background: #15151c;
-            color: white;
-
-            border: 1px solid #333;
-            border-radius: 8px;
-
-            font-size: 16px;
-            outline: none;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #00e5ff;
-        }
-
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #222;
-            color: #888;
-        }
-
-        /* THEME BUTTON */
-
-        #themeButton {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-
-            padding: 12px 16px;
-
-            border: none;
-            border-radius: 50px;
-
-            background: #00e5ff;
-            color: #000;
-
-            cursor: pointer;
-            font-weight: bold;
-
-            z-index: 999;
-        }
-
-        /* TOP BUTTON */
-
-        #topButton {
-            position: fixed;
-            right: 20px;
-            bottom: 75px;
-
-            width: 45px;
-            height: 45px;
-
-            border: none;
-            border-radius: 50%;
-
-            background: #00e5ff;
-            color: #000;
-
-            cursor: pointer;
-
-            display: none;
-
-            font-size: 20px;
-        }
-
-        /* LIGHT MODE */
-
-        .light-mode {
-            background: #f5f5f5;
-            color: #111;
-        }
-
-        .light-mode nav {
-            background: rgba(255,255,255,0.95);
-            border-color: #ddd;
-        }
-
-        .light-mode nav ul li a {
-            color: #111;
-        }
-
-        .light-mode .about {
-            color: #444;
-        }
-
-        .light-mode .project-card {
-            background: white;
-            border-color: #ddd;
-        }
-
-        .light-mode .project-content p {
-            color: #555;
-        }
-
-        .light-mode .contact-form input,
-        .light-mode .contact-form textarea {
-            background: white;
-            color: #111;
-            border-color: #ccc;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav ul {
-                gap: 12px;
-                font-size: 14px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .typing {
-                font-size: 20px;
-            }
-
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Md Mehedi Islam - Web Developer Portfolio">
+<meta name="author" content="Md Mehedi Islam">
+
+<title>Md Mehedi Islam | Web Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#0b0b0f;
+    color:white;
+    line-height:1.6;
+    transition:.3s;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(11,11,15,.96);
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    color:#00e5ff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-links a:hover{
+    color:#00e5ff;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    color:#00e5ff;
+    background:none;
+    border:0;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.profile-image{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #00e5ff;
+    margin-bottom:25px;
+    box-shadow:0 0 30px rgba(0,229,255,.3);
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero h1 span{
+    color:#00e5ff;
+}
+
+.typing{
+    color:#aaa;
+    font-size:24px;
+    margin:10px 0 20px;
+}
+
+.button{
+    display:inline-block;
+    padding:12px 22px;
+    margin:6px;
+    border-radius:8px;
+    background:#00e5ff;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(0,229,255,.4);
+}
+
+.secondary{
+    background:transparent;
+    color:#00e5ff;
+    border:1px solid #00e5ff;
+}
+
+/* SECTIONS */
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    color:#00e5ff;
+    font-size:36px;
+    margin-bottom:45px;
+}
+
+/* ABOUT */
+
+.about{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:#ccc;
+    font-size:18px;
+}
+
+/* SKILLS */
+
+.skills{
+    max-width:800px;
+    margin:auto;
+}
+
+.skill{
+    margin-bottom:25px;
+}
+
+.skill-name{
+    display:flex;
+    justify-content:space-between;
+}
+
+.skill-bar{
+    height:12px;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.skill-progress{
+    height:100%;
+    background:#00e5ff;
+    border-radius:20px;
+    animation:skill 2s ease;
+}
+
+@keyframes skill{
+    from{width:0}
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.project-card{
+    background:#15151c;
+    border:1px solid #292933;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    border-color:#00e5ff;
+}
+
+.project-image{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:20px;
+}
+
+.project-content h3{
+    color:#00e5ff;
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:#aaa;
+    margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:14px;
+    background:#15151c;
+    color:white;
+    border:1px solid #333;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.contact-form textarea{
+    min-height:150px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #222;
+    color:#888;
+}
+
+/* BUTTONS */
+
+#themeButton{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    padding:12px 16px;
+    border:0;
+    border-radius:30px;
+    background:#00e5ff;
+    cursor:pointer;
+    z-index:999;
+}
+
+#topButton{
+    position:fixed;
+    right:20px;
+    bottom:75px;
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:50%;
+    background:#00e5ff;
+    cursor:pointer;
+    display:none;
+    font-size:20px;
+}
+
+/* LIGHT MODE */
+
+.light-mode{
+    background:#f5f5f5;
+    color:#111;
+}
+
+.light-mode nav{
+    background:rgba(255,255,255,.96);
+    border-color:#ddd;
+}
+
+.light-mode .nav-links a{
+    color:#111;
+}
+
+.light-mode .about{
+    color:#444;
+}
+
+.light-mode .project-card{
+    background:white;
+    border-color:#ddd;
+}
+
+.light-mode .project-content p{
+    color:#555;
+}
+
+.light-mode .contact-form input,
+.light-mode .contact-form textarea{
+    background:white;
+    color:#111;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        gap:0;
+        background:#0b0b0f;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        padding:15px;
+        border-bottom:1px solid #222;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+}
+
+@media(max-width:500px){
+
+    .profile-image{
+        width:150px;
+        height:150px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .typing{
+        font-size:20px;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -438,11 +400,13 @@
 
 <nav>
 
-    <div class="logo">
-        Md Mehedi
-    </div>
+    <div class="logo">Md Mehedi</div>
 
-    <ul>
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -457,44 +421,54 @@
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <img
-            class="profile-image"
-            src="profile.jpg"
-            alt="Md Mehedi Islam Profile Photo"
-        >
+    <img
+        class="profile-image"
+        src="profile.jpg"
+        alt="Md Mehedi Islam"
+    >
 
-        <h1>
-            Hi, I'm <span>Md Mehedi Islam</span>
-        </h1>
+    <h1>
+        Hi, I'm <span>Md Mehedi Islam</span>
+    </h1>
 
-        <div class="typing" id="typing">
-            Web Developer
-        </div>
-
-        <p>
-            I am learning Web Development and building modern websites.
-        </p>
-
-        <br>
-
-        <a
-            class="button"
-            href="https://www.facebook.com/mdmehedi.islam.31508/"
-            target="_blank"
-        >
-            Facebook
-        </a>
-
-        <a
-            class="button secondary"
-            href="#projects"
-        >
-            My Projects
-        </a>
-
+    <div class="typing" id="typing">
+        Web Developer
     </div>
+
+    <p>
+        I am learning Web Development and building modern websites.
+    </p>
+
+    <br>
+
+    <a
+        class="button"
+        href="https://www.facebook.com/mdmehedi.islam.31508/"
+        target="_blank"
+    >
+        Facebook
+    </a>
+
+    <a
+        class="button secondary"
+        href="#projects"
+    >
+        View Projects
+    </a>
+
+    <!-- CV -->
+
+    <a
+        class="button"
+        href="cv.pdf"
+        download
+    >
+        📄 Download CV
+    </a>
+
+</div>
 
 </section>
 
@@ -503,26 +477,26 @@
 
 <section id="about">
 
-    <h2 class="section-title">
-        About Me
-    </h2>
+<h2 class="section-title">
+    About Me
+</h2>
 
-    <div class="about">
+<div class="about">
 
-        <p>
-            Hello! I am Md Mehedi Islam.
-            I am learning Web Development and currently focusing on
-            HTML, CSS and JavaScript.
-        </p>
+<p>
+Hello! I am Md Mehedi Islam.
+I am learning Web Development and currently focusing on
+HTML, CSS and JavaScript.
+</p>
 
-        <br>
+<br>
 
-        <p>
-            My goal is to become a professional Web Developer
-            and build useful, modern and responsive websites.
-        </p>
+<p>
+My goal is to become a professional Web Developer and create
+modern, responsive and useful websites.
+</p>
 
-    </div>
+</div>
 
 </section>
 
@@ -531,80 +505,53 @@
 
 <section id="skills">
 
-    <h2 class="section-title">
-        My Skills
-    </h2>
+<h2 class="section-title">
+    My Skills
+</h2>
 
-    <div class="skills-container">
+<div class="skills">
 
-        <div class="skill">
-
-            <div class="skill-name">
-                <span>HTML</span>
-                <span>90%</span>
-            </div>
-
-            <div class="skill-bar">
-                <div
-                    class="skill-progress"
-                    style="width:90%"
-                ></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-name">
-                <span>CSS</span>
-                <span>80%</span>
-            </div>
-
-            <div class="skill-bar">
-                <div
-                    class="skill-progress"
-                    style="width:80%"
-                ></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-name">
-                <span>JavaScript</span>
-                <span>65%</span>
-            </div>
-
-            <div class="skill-bar">
-                <div
-                    class="skill-progress"
-                    style="width:65%"
-                ></div>
-            </div>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-name">
-                <span>Web Design</span>
-                <span>75%</span>
-            </div>
-
-            <div class="skill-bar">
-                <div
-                    class="skill-progress"
-                    style="width:75%"
-                ></div>
-            </div>
-
-        </div>
-
+<div class="skill">
+    <div class="skill-name">
+        <span>HTML</span>
+        <span>90%</span>
     </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:90%"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <div class="skill-name">
+        <span>CSS</span>
+        <span>80%</span>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:80%"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <div class="skill-name">
+        <span>JavaScript</span>
+        <span>65%</span>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:65%"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <div class="skill-name">
+        <span>Web Design</span>
+        <span>75%</span>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-progress" style="width:75%"></div>
+    </div>
+</div>
+
+</div>
 
 </section>
 
@@ -613,112 +560,114 @@
 
 <section id="projects">
 
-    <h2 class="section-title">
-        My Projects
-    </h2>
+<h2 class="section-title">
+    My Projects
+</h2>
 
-    <div class="projects-container">
-
-
-        <!-- PROJECT 1 -->
-
-        <div class="project-card">
-
-            <img
-                class="project-image"
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80"
-                alt="Portfolio Website"
-            >
-
-            <div class="project-content">
-
-                <h3>
-                    Portfolio Website
-                </h3>
-
-                <p>
-                    A modern responsive personal portfolio website
-                    built using HTML, CSS and JavaScript.
-                </p>
-
-                <a
-                    class="button"
-                    href="#home"
-                >
-                    View Project
-                </a>
-
-            </div>
-
-        </div>
+<div class="projects">
 
 
-        <!-- PROJECT 2 -->
+<!-- PROJECT 1 -->
 
-        <div class="project-card">
+<div class="project-card">
 
-            <img
-                class="project-image"
-                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=80"
-                alt="Web Design Project"
-            >
+<img
+    class="project-image"
+    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80"
+    alt="Portfolio Website"
+>
 
-            <div class="project-content">
+<div class="project-content">
 
-                <h3>
-                    Web Design
-                </h3>
+<h3>Portfolio Website</h3>
 
-                <p>
-                    A clean and modern website design project
-                    created while learning frontend development.
-                </p>
+<p>
+A responsive personal portfolio website created using
+HTML, CSS and JavaScript.
+</p>
 
-                <a
-                    class="button"
-                    href="#home"
-                >
-                    View Project
-                </a>
+<a
+    class="button"
+    href="https://opffg7229-boop.github.io/WebDevelopment/"
+    target="_blank"
+>
+    View Project
+</a>
 
-            </div>
+<a
+    class="button secondary"
+    href="https://github.com/opffg7229-boop/WebDevelopment"
+    target="_blank"
+>
+    GitHub
+</a>
 
-        </div>
+</div>
+</div>
 
 
-        <!-- PROJECT 3 -->
+<!-- PROJECT 2 -->
 
-        <div class="project-card">
+<div class="project-card">
 
-            <img
-                class="project-image"
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
-                alt="JavaScript Project"
-            >
+<img
+    class="project-image"
+    src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=80"
+    alt="Web Design"
+>
 
-            <div class="project-content">
+<div class="project-content">
 
-                <h3>
-                    JavaScript Project
-                </h3>
+<h3>Web Design Project</h3>
 
-                <p>
-                    An interactive project created using
-                    JavaScript DOM and basic programming.
-                </p>
+<p>
+A modern website design project created while learning
+frontend development.
+</p>
 
-                <a
-                    class="button"
-                    href="#home"
-                >
-                    View Project
-                </a>
+<a
+    class="button secondary"
+    href="https://github.com/opffg7229-boop"
+    target="_blank"
+>
+    GitHub
+</a>
 
-            </div>
+</div>
+</div>
 
-        </div>
 
-    </div>
+<!-- PROJECT 3 -->
+
+<div class="project-card">
+
+<img
+    class="project-image"
+    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+    alt="JavaScript Project"
+>
+
+<div class="project-content">
+
+<h3>JavaScript Project</h3>
+
+<p>
+An interactive JavaScript project using DOM and
+basic programming concepts.
+</p>
+
+<a
+    class="button secondary"
+    href="https://github.com/opffg7229-boop"
+    target="_blank"
+>
+    GitHub
+</a>
+
+</div>
+</div>
+
+</div>
 
 </section>
 
@@ -727,61 +676,70 @@
 
 <section id="contact">
 
-    <h2 class="section-title">
-        Contact Me
-    </h2>
+<h2 class="section-title">
+    Contact Me
+</h2>
 
-    <div class="contact-container">
+<div class="contact">
 
-        <form
-            class="contact-form"
-            onsubmit="sendMessage(event)"
-        >
+<form
+    class="contact-form"
+    onsubmit="sendMessage(event)"
+>
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Your Name"
-                required
-            >
+<input
+    type="text"
+    id="name"
+    placeholder="Your Name"
+    required
+>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Your Email"
-                required
-            >
+<input
+    type="email"
+    id="email"
+    placeholder="Your Email"
+    required
+>
 
-            <textarea
-                id="message"
-                placeholder="Your Message"
-                required
-            ></textarea>
+<textarea
+    id="message"
+    placeholder="Your Message"
+    required
+></textarea>
 
-            <button
-                class="button"
-                type="submit"
-            >
-                Send Message
-            </button>
+<button
+    class="button"
+    type="submit"
+>
+    Send Message
+</button>
 
-        </form>
+</form>
 
-        <br>
+<br>
 
-        <div style="text-align:center">
+<div style="text-align:center">
 
-            <a
-                class="button secondary"
-                href="https://www.facebook.com/mdmehedi.islam.31508/"
-                target="_blank"
-            >
-                Contact on Facebook
-            </a>
+<a
+    class="button secondary"
+    href="https://www.facebook.com/mdmehedi.islam.31508/"
+    target="_blank"
+>
+    Facebook
+</a>
 
-        </div>
+<!-- CHANGE THIS EMAIL LATER -->
 
-    </div>
+<a
+    class="button"
+    href="mailto:example@gmail.com"
+>
+    📧 Email Me
+</a>
+
+</div>
+
+</div>
 
 </section>
 
@@ -790,18 +748,18 @@
 
 <footer>
 
-    <p>
-        © 2026 Md Mehedi Islam. All Rights Reserved.
-    </p>
+<p>
+© 2026 Md Mehedi Islam. All Rights Reserved.
+</p>
 
-    <p>
-        Built with HTML, CSS & JavaScript
-    </p>
+<p>
+Built with HTML, CSS & JavaScript
+</p>
 
 </footer>
 
 
-<!-- THEME BUTTON -->
+<!-- THEME -->
 
 <button
     id="themeButton"
@@ -811,7 +769,7 @@
 </button>
 
 
-<!-- TOP BUTTON -->
+<!-- TOP -->
 
 <button
     id="topButton"
@@ -823,143 +781,154 @@
 
 <script>
 
-    /* TYPING ANIMATION */
+/* MOBILE MENU */
 
-    const words = [
-        "Web Developer",
-        "Frontend Developer",
-        "Web Designer",
-        "JavaScript Learner"
-    ];
+function toggleMenu(){
 
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+    document
+        .getElementById("navLinks")
+        .classList.toggle("active");
 
-    function typeEffect() {
+}
 
-        const typing = document.getElementById("typing");
 
-        const currentWord = words[wordIndex];
+/* TYPING */
 
-        if (!deleting) {
+const words = [
+    "Web Developer",
+    "Frontend Developer",
+    "Web Designer",
+    "JavaScript Learner"
+];
 
-            typing.textContent =
-                currentWord.substring(0, charIndex + 1);
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-            charIndex++;
+function typeEffect(){
 
-            if (charIndex === currentWord.length) {
+    const typing =
+        document.getElementById("typing");
 
-                deleting = true;
+    const word =
+        words[wordIndex];
 
-                setTimeout(typeEffect, 1200);
+    if(!deleting){
 
-                return;
+        typing.textContent =
+            word.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === word.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1200);
+
+            return;
+        }
+
+    }else{
+
+        typing.textContent =
+            word.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex >= words.length){
+                wordIndex = 0;
             }
-
-        } else {
-
-            typing.textContent =
-                currentWord.substring(0, charIndex - 1);
-
-            charIndex--;
-
-            if (charIndex === 0) {
-
-                deleting = false;
-
-                wordIndex++;
-
-                if (wordIndex >= words.length) {
-                    wordIndex = 0;
-                }
-
-            }
-
         }
-
-        setTimeout(
-            typeEffect,
-            deleting ? 60 : 100
-        );
     }
 
-    typeEffect();
+    setTimeout(
+        typeEffect,
+        deleting ? 60 : 100
+    );
+}
+
+typeEffect();
 
 
-    /* DARK / LIGHT MODE */
+/* DARK LIGHT */
 
-    function toggleTheme() {
+function toggleTheme(){
 
-        document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("light-mode");
 
-        const button =
-            document.getElementById("themeButton");
+    const button =
+        document.getElementById("themeButton");
 
-        if (
-            document.body.classList.contains("light-mode")
-        ) {
+    if(
+        document.body.classList.contains("light-mode")
+    ){
 
-            button.innerHTML = "🌙 Dark Mode";
+        button.innerHTML = "🌙 Dark Mode";
 
-        } else {
+    }else{
 
-            button.innerHTML = "☀️ Light Mode";
+        button.innerHTML = "☀️ Light Mode";
 
-        }
+    }
+}
+
+
+/* CONTACT */
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    alert(
+        "Thank you " +
+        name +
+        "! Your message has been received."
+    );
+
+    document
+        .querySelector(".contact-form")
+        .reset();
+}
+
+
+/* TOP BUTTON */
+
+window.addEventListener("scroll",function(){
+
+    const button =
+        document.getElementById("topButton");
+
+    if(window.scrollY > 400){
+
+        button.style.display = "block";
+
+    }else{
+
+        button.style.display = "none";
 
     }
 
-
-    /* CONTACT FORM */
-
-    function sendMessage(event) {
-
-        event.preventDefault();
-
-        const name =
-            document.getElementById("name").value;
-
-        alert(
-            "Thank you " +
-            name +
-            "! Your message has been received."
-        );
-
-        document.querySelector(".contact-form").reset();
-
-    }
+});
 
 
-    /* BACK TO TOP */
+function goTop(){
 
-    window.addEventListener("scroll", function () {
-
-        const topButton =
-            document.getElementById("topButton");
-
-        if (window.scrollY > 400) {
-
-            topButton.style.display = "block";
-
-        } else {
-
-            topButton.style.display = "none";
-
-        }
-
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
     });
 
-
-    function goTop() {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
+}
 
 </script>
 
